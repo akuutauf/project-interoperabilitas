@@ -98,7 +98,7 @@
                         </a>
                     </div>
                 </div>
-                <a class="button ml-3" href="/dashboard">Menu Admin</a>
+                <a class="button ml-3" href="/dashboard">Dashboard</a>
             </div>
         </div>
 
@@ -116,8 +116,15 @@
                             class="count">13</span></a>
 
                     <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                    <a class="nav-link" href="/logout"><i class="fa fa-power-off"></i> Logout</a>
+                        <a class="nav-link" href="/logout"
+                            onclick="event.preventDefault();
+                    this.closest('form').submit();"><i
+                                class="fa fa-power-off"></i> Logout</a>
+                    </form>
+
                 </div>
             </div>
 
