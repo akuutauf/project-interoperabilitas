@@ -15,6 +15,8 @@
             <ul class="nav navbar-nav">
                 <li class="active">
                     <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="/admin"> <i class="menu-icon fa-solid fa-bars-progress"></i>Kategori </a>
+                    <a href="/admin"> <i class="menu-icon fa-solid fa-list-check"></i>Tugas </a>
                 </li>
                 <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
