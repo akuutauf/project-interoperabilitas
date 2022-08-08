@@ -27,6 +27,10 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('admin');
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
+Route::get('/admin/kategori', function () {
+    return view('admin.kategori');
+})->middleware(['auth'])->name('admin');
+
+Route::get('/admin/tugas', function () {
+    return view('admin.tugas');
 })->middleware(['auth'])->name('admin');
