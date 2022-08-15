@@ -15,7 +15,7 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="/admin"> <i class="menu-icon fa-solid fa-house-chimney"></i></i>Overview </a>
                     <a href="/admin/kategori"> <i class="menu-icon fa-solid fa-bars-progress"></i>Kategori </a>
                     <a href="/admin/tugas"> <i class="menu-icon fa-solid fa-list-check"></i>Tugas </a>
                 </li>

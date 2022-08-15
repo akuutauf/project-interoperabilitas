@@ -12,6 +12,14 @@
 }
 
 .bg-theme {
-    background-color: #9772fb;
+    background-color: #9772fb !important;
     color: white !important;
+}
+
+.icon-color {
+    color: #764af1 !important;
+}
+
+.icon-home {
+    font-size: 1rem !important;
 }
