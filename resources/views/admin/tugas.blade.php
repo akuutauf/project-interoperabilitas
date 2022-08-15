@@ -34,31 +34,19 @@
                                         <th class="bg-theme">Nama Tugas</th>
                                         <th class="bg-theme">Keterangan Tugas</th>
                                         <th class="bg-theme">Status Tugas</th>
-                                        <th class="bg-theme">Kategori Tugas</th>
+                                        <th class="bg-theme">Nama Matakuliah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Membuat Diagram UML</td>
-                                        <td>Tugas disesuaikan dengan project akhir</td>
-                                        <td>Dikerjakan</td>
-                                        <td>Analisis Desain Perangkat Lunak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Mendefinisikan kebutuhan Project</td>
-                                        <td>Deadline 33 April 2022</td>
-                                        <td>Belum Dikerjakan</td>
-                                        <td>Manajemen Proyek</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Membuat API Mobile</td>
-                                        <td>Boleh menggunakan Flutter dan yang lainnya</td>
-                                        <td>Selesai</td>
-                                        <td>Interoperabilitas</td>
-                                    </tr>
+                                    @foreach ($dataTugas as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->nama_tugas }}</td>
+                                            <td>{{ $item->ket_tugas }}</td>
+                                            <td>{{ $item->status_tugas }}</td>
+                                            <td>{{ $item->kategori->nama_kategori }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

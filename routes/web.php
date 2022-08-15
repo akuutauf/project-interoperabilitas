@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +36,9 @@ Route::get('/admin/kategori', function () {
 Route::get('/admin/tugas', function () {
     return view('admin.tugas');
 })->middleware(['auth'])->name('admin');
+
+// get route from resource
+Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
+Route::get('/admin/tugas', [TugasController::class, 'index']);
+
+Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');

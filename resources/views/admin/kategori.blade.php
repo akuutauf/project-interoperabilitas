@@ -33,40 +33,16 @@
                                         <th class="bg-theme">No</th>
                                         <th class="bg-theme">Nama kategori</th>
                                         <th class="bg-theme">Status Kategori</th>
-                                        <th class="bg-theme">Terakhir Update</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Analisis Desain Perangkat Lunak</td>
-                                        <td>Aktif</td>
-                                        <td>2022-08-15 08:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Manajemen Proyek</td>
-                                        <td>Aktif</td>
-                                        <td>2022-08-15 08:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Interoperabilitas</td>
-                                        <td>Aktif</td>
-                                        <td>2022-08-15 08:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Metode dan Model Pengembangan Perangkat Lunak</td>
-                                        <td>Aktif</td>
-                                        <td>2022-08-15 08:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Keamanan Perangkat Lunak</td>
-                                        <td>Aktif</td>
-                                        <td>2022-08-15 08:00:00</td>
-                                    </tr>
+                                    @foreach ($data as $kategori)
+                                        <tr>
+                                            <td>{{ $kategori->id }}</td>
+                                            <td>{{ $kategori->nama_kategori }}</td>
+                                            <td>{{ $kategori->status_kategori }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
