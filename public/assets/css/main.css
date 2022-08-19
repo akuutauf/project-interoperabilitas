@@ -1,0 +1,25 @@
+.button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #764af1 !important;
+    color: white !important;
+}
+
+.button:hover {
+    border-radius: 5px;
+    background-color: #9772fb !important;
+    animation-duration: 1000ms;
+}
+
+.bg-theme {
+    background-color: #9772fb !important;
+    color: white !important;
+}
+
+.icon-color {
+    color: #764af1 !important;
+}
+
+.icon-home {
+    font-size: 1rem !important;
+}

@@ -1,25 +1,10 @@
 <x-app-layout>
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    {{-- Style Button --}}
-    <style>
-        .button {
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: #764AF1 !important;
-            color: white !important;
-        }
-
-        .button:hover {
-            border-radius: 5px;
-            background-color: #9772FB !important;
-            animation-duration: 1000ms;
-        }
-    </style>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

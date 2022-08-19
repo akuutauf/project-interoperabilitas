@@ -1,38 +1,25 @@
-{{-- Style Button --}}
-<style>
-    .button {
-        padding: 10px 15px;
-        border-radius: 5px;
-        background-color: #764AF1 !important;
-        color: white !important;
-    }
-
-    .button:hover {
-        border-radius: 5px;
-        background-color: #9772FB !important;
-        animation-duration: 1000ms;
-    }
-</style>
-
 <!-- Header-->
 <header id="header" class="header">
     <div class="header-menu">
         <div class="col-sm-7">
-            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+            {{-- style.css --}}
+            <a id="menuToggle" class="menutoggle pull-left bg-theme"><i class="fa fa fa-tasks"></i></a>
 
             <div class="header-left">
-                <button class="search-trigger"><i class="fa fa-search"></i></button>
+                <a class="" href="/dashboard"><i class="fa-solid fa-house icon-color icon-home"></i></a>
+
                 <div class="form-inline">
                     <form class="search-form">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                        <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                        <button class="search-close" type="submit"><i
+                                class="fa-solid fa-magnifying-glass icon-color"></i></button>
                     </form>
                 </div>
 
                 <div class="dropdown for-notification">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-bell"></i>
+                        <i class="fa-solid fa-bell icon-color"></i>
                         <span class="count bg-danger">5</span>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="notification">
@@ -55,7 +42,7 @@
                 <div class="dropdown for-message">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="message"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ti-email"></i>
+                        <i class="fa-solid fa-envelope icon-color"></i>
                         <span class="count bg-primary">9</span>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="message">
@@ -98,7 +85,7 @@
                         </a>
                     </div>
                 </div>
-                <a class="button ml-3" href="/dashboard">Menu Admin</a>
+                <button class="search-trigger"><i class="fa fa-search icon-color"></i></button>
             </div>
         </div>
 
@@ -116,6 +103,14 @@
                             class="count">13</span></a>
 
                     <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <a class="nav-link" href="/logout"
+                            onclick="event.preventDefault();
+                    this.closest('form').submit();"><i
+                                class="fa fa-power-off"></i> Logout</a>
+                    </form>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -127,13 +122,14 @@
                         </x-dropdown-link>
                     </form>
                     {{-- <a class="nav-link" href=""><i class="fa fa-power-off"></i> Logout</a> --}}
+
                 </div>
             </div>
 
             <div class="language-select dropdown" id="language-select">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language"
                     aria-haspopup="true" aria-expanded="true">
-                    <i class="flag-icon flag-icon-us"></i>
+                    <i class="flag-icon flag-icon-id"></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="language">
                     <div class="dropdown-item">
@@ -150,7 +146,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </header><!-- /header -->
