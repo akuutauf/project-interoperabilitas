@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,10 @@ require __DIR__ . '/auth.php';
 Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+// Route::middlewere(['auth'])->group( function(){
+//     Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController');
+//     Route::get('/kategori', [Admin\KategoriController::class, 'index']);
+// });
+Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
+Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
