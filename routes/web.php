@@ -3,6 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Admin\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,18 +28,29 @@ require __DIR__ . '/auth.php';
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
-})->middleware(['auth'])->name('admin');
 
-Route::get('/admin/kategori', function () {
-    return view('admin.kategori');
-})->middleware(['auth'])->name('admin');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/admin/tugas', function () {
-    return view('admin.tugas');
-})->middleware(['auth'])->name('admin');
+// Route::middlewere(['auth'])->group( function(){
+//     Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController');
+//     Route::get('/kategori', [Admin\KategoriController::class, 'index']);
+// });
+Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
+Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
 
-// get route from resource
-Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
-Route::get('/admin/tugas', [TugasController::class, 'index']);
+// })->middleware(['auth'])->name('admin');
 
-Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');
+// Route::get('/admin/kategori', function () {
+//     return view('admin.kategori');
+// })->middleware(['auth'])->name('admin');
+
+// Route::get('/admin/tugas', function () {
+//     return view('admin.tugas');
+// })->middleware(['auth'])->name('admin');
+
+// // get route from resource
+// Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
+// Route::get('/admin/tugas', [TugasController::class, 'index']);
+
+// Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');
+

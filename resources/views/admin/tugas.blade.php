@@ -44,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($dataTugas as $item)
+                                    {{-- @foreach ($dataTugas as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->nama_tugas }}</td>
@@ -58,7 +58,7 @@
                                                 </center>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
