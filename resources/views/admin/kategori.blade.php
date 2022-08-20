@@ -36,13 +36,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($data as $kategori)
+                                    @foreach ($data as $kategori)
                                         <tr>
                                             <td>{{ $kategori->id }}</td>
                                             <td>{{ $kategori->nama_kategori }}</td>
                                             <td>{{ $kategori->status_kategori }}</td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

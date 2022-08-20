@@ -40,17 +40,17 @@ Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth
 
 // })->middleware(['auth'])->name('admin');
 
-// Route::get('/admin/kategori', function () {
-//     return view('admin.kategori');
-// })->middleware(['auth'])->name('admin');
+Route::get('/admin/kategori', function () {
+    return view('admin.kategori');
+})->middleware(['auth'])->name('admin');
 
-// Route::get('/admin/tugas', function () {
-//     return view('admin.tugas');
-// })->middleware(['auth'])->name('admin');
+Route::get('/admin/tugas', function () {
+    return view('admin.tugas');
+})->middleware(['auth'])->name('admin');
 
-// // get route from resource
-// Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
-// Route::get('/admin/tugas', [TugasController::class, 'index']);
+// get route from resource
+Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
+Route::get('/admin/tugas', [TugasController::class, 'index']);
 
-// Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');
+Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');
 

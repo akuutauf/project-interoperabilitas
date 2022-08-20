@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\AuthController;
-use App\Http\Controllers\Admin\TugasController;
+use App\Http\Controllers\TugasController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,16 @@ Route::group(['prefix'=>'tugas'], function (){
             Route::post('store', [TugasController::class, 'store']);
             Route::post('update', [TugasController::class, 'update']);
             Route::post('delete', [TugasController::class, 'destroy']);
+        });
+    });
+Route::group(['prefix'=>'kategori'], function (){
+    Route::group(['middlewere' => 'auth:api'], function (){
+        // Route::prefix('tugas')->group(function (){
+            Route::get('get', [KategoriController::class, 'getData']);
+            // Route::get('show/{id}', [KategoriController::class, 'getData']);
+            Route::post('store', [KategoriController::class, 'store']);
+            Route::post('update', [KategoriController::class, 'update']);
+            Route::post('delete', [KategoriController::class,   'destroy']);
         });
     });
 // });

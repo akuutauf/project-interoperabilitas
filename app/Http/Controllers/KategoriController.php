@@ -3,10 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\kategori;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Admin;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
+
+    public function getData(){
+        $kategori=DB::table('kategoris')
+        ->orderBy('id', 'desc')
+        ->get();
+
+        return response()->json($kategori, 200);
+     }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +38,7 @@ class KategoriController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -37,6 +50,18 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+        $inputKategori = $request->validate([
+            'id' => 'required',
+            'nama_kategori' => 'required',
+            'status_kategori' => 'required',
+        ]);
+
+        $kategori= new kategori;
+        $kategori->id = $request->id;
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->status_kategori = $request->status_kategori;
+        $kategori->save();
+        return response()->json($kategori, 201);
     }
 
     /**
@@ -64,13 +89,26 @@ class KategoriController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    public function update(Request $request)
     {
         //
+        $updatedata = $request->validate([
+            'id' => 'required',
+            'nama_kategori' => 'required',
+            'status_kategori' => 'required',
+          ]);
+
+          $kategori = kategori::where('id','=', $request->id)->first();
+          $kategori->id = $request->id;
+          $kategori->nama_kategori = $request->nama_kategori;
+          $kategori->status_kategori = $request->status_kategori;
+          $kategori->save();
+
+          return response()->json($kategori, 201);
     }
 
     /**
@@ -79,9 +117,20 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $hapuskategori = kategori::where('id','=', $request->id)->first();
+
+       if(!empty($hapuskategori)){
+        $hapuskategori-> delete();
+
+        return response()->json($hapuskategori,201);
+       }else{
+        return response()->json([
+            'error' => 'data tidak ditemukan',
+        ], 404);
+       }
     }
 }
 

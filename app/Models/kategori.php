@@ -12,6 +12,7 @@ class kategori extends Model
     protected $table = 'kategoris';
     protected $primaryKey = 'id';
     protected $fillable = ['id', 'nama_kategori', 'status_kategori'];
+    protected $guarded =[]; 
 
     public function tugas()
     {

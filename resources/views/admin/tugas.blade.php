@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($dataTugas as $item)
+                                    @foreach ($dataTugas as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->nama_tugas }}</td>
@@ -46,7 +46,7 @@
                                             <td>{{ $item->status_tugas }}</td>
                                             <td>{{ $item->kategori->nama_kategori }}</td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

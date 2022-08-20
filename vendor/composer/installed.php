@@ -410,11 +410,11 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
+
             'reference' => '9dc4e4f83c33451d7ca01ef0b47b9d3f08a7eb41',
-=======
+
             'reference' => 'b5d5a063da72e4cedbfa88e7b363b58ff742e29b',
->>>>>>> defee3b97d59950119148c2804b9a7cc26f3db5e
+
             'dev_requirement' => false,
         ),
         'laravel/passport' => array(
