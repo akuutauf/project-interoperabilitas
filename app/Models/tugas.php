@@ -9,6 +9,7 @@ class Tugas extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
     protected $table = 'tugas';
     protected $primaryKey = 'id';
     protected $fillable = ['id', 'kategori_id', 'nama_tugas', 'ket_tugas', 'status_tugas'];

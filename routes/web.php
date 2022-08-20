@@ -28,15 +28,18 @@ require __DIR__ . '/auth.php';
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
-
 })->middleware(['auth'])->name('dashboard');
+
+Route::resource('kategoricontroller', 'App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
+Route::resource('tugascontroller', 'App\Http\Controllers\Admin\TugasController')->middleware(['auth']);
+
+Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
+Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
 
 // Route::middlewere(['auth'])->group( function(){
 //     Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController');
 //     Route::get('/kategori', [Admin\KategoriController::class, 'index']);
 // });
-Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
-Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
 
 // })->middleware(['auth'])->name('admin');
 
@@ -53,4 +56,3 @@ Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth
 // Route::get('/admin/tugas', [TugasController::class, 'index']);
 
 // Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');
-
