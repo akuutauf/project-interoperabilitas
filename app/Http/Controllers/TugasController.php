@@ -16,7 +16,7 @@ class TugasController extends Controller
     {
         // $dataTugas = tugas::all();
         $dataTugas = tugas::all();
-        return view('admin.tugas', compact('dataTugas'));
+        return view('admin.tugas.index', compact('dataTugas'));
     }
 
     /**
@@ -26,7 +26,8 @@ class TugasController extends Controller
      */
     public function create()
     {
-        //
+        $tugas = tugas::all();
+        return view('admin.tugas.create', compact('tugas'));
     }
 
     /**

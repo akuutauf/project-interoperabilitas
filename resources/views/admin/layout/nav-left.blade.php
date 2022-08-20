@@ -16,9 +16,10 @@
             <ul class="nav navbar-nav">
                 <li class="active">
                     <a href="{{ url('/admin') }}"> <i class="menu-icon fa-solid fa-house"></i></i>Dashboard </a>
-                    <a href="{{ url('/kategori') }}"> <i class="menu-icon fa-solid fa-bookmark"></i></i></i>Kategori
+                    <a href="{{ url('/kategori') }}"> <i class="menu-icon fa-solid fa-bookmark"></i></i></i>Manajemen
+                        Katgeori
                     </a>
-                    <a href="{{ url('/tugas') }}"> <i class="menu-icon fa-solid fa-book"></i></i>Tugas </a>
+                    <a href="{{ url('/tugas') }}"> <i class="menu-icon fa-solid fa-book"></i></i>Manajemen Tugas </a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

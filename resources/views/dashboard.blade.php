@@ -13,7 +13,7 @@
                     You're logged in!
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a class="button" href="/admin">Menu Admin</a>
+                    <a class="button" href="/admin">Manajemen Data</a>
                 </div>
             </div>
         </div>

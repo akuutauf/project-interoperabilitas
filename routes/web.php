@@ -30,11 +30,14 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('kategoricontroller', 'App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
-Route::resource('tugascontroller', 'App\Http\Controllers\Admin\TugasController')->middleware(['auth']);
 
 Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
 Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
+Route::get('/insert-kategori', [KategoriController::class, 'create'])->middleware(['auth']);
+Route::get('/insert-tugas', [TugasController::class, 'create'])->middleware(['auth']);
+
+// Route::resource('kategoricontroller', 'App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
+// Route::resource('tugascontroller', 'App\Http\Controllers\Admin\TugasController')->middleware(['auth']);
 
 // Route::middlewere(['auth'])->group( function(){
 //     Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController');

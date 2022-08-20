@@ -15,10 +15,8 @@
 {{-- Css Manual --}}
 <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
-{{-- Include Header --}}
-@section('title')
-    <title>Interoperabilitas | Admin Panel</title>
-@endsection
+@yield('title')
+
 @include('admin.layout.top')
 
 

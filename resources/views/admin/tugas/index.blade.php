@@ -2,7 +2,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    <title>Interoperabilitas | Kategori</title>
+    <title>Interoperabilitas | Manajemen Tugas</title>
 @endsection
 
 {{-- Include Section for Content --}}
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Data Kategori</h1>
+                    <h1>Data Tugas</h1>
                 </div>
             </div>
         </div>
@@ -24,11 +24,11 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Tabel Data Kategori</strong>
+                            <strong class="card-title">Tabel Data Tugas</strong>
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <a href="" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data</a>
+                                <a href="/insert-tugas" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -36,17 +36,21 @@
                                 <thead>
                                     <tr>
                                         <th class="bg-theme">No</th>
-                                        <th class="bg-theme">Nama kategori</th>
-                                        <th class="bg-theme">Status Kategori</th>
+                                        <th class="bg-theme">Nama Tugas</th>
+                                        <th class="bg-theme">Keterangan Tugas</th>
+                                        <th class="bg-theme">Status Tugas</th>
+                                        <th class="bg-theme">Nama Matakuliah</th>
                                         <th class="bg-theme">Menu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $kategori)
+                                    @foreach ($dataTugas as $item)
                                         <tr>
-                                            <td>{{ $kategori->id }}</td>
-                                            <td>{{ $kategori->nama_kategori }}</td>
-                                            <td>{{ $kategori->status_kategori }}</td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->nama_tugas }}</td>
+                                            <td>{{ $item->ket_tugas }}</td>
+                                            <td>{{ $item->status_tugas }}</td>
+                                            <td>{{ $item->kategori->nama_kategori }}</td>
                                             <td>
                                                 <center><a href=""><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a

@@ -27,3 +27,37 @@
 .btn-border {
     border-radius: 5px !important;
 }
+
+.shadow-card {
+    /* box-shadow: 1px 1px 1px 1px rgba(12, 12, 12, 0.2); */
+    box-shadow: 0px 5px 25px rgb(1 1 1 / 10%);
+}
+
+.container-form {
+    background-color: white;
+    border-radius: 7px;
+}
+
+.form-theme {
+    background-color: #f6f6f6 !important;
+    height: 45px;
+    border: 0px !important;
+}
+
+.form-theme-disable {
+    background-color: #f6f6f6;
+    height: 45px;
+    border: 0px !important;
+}
+
+.form-color {
+    background-color: #f6f6f6 !important;
+}
+
+.medium {
+    font-weight: 500 !important;
+}
+
+.border-radius {
+    border-radius: 0.5rem !important;
+}

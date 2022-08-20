@@ -40,7 +40,7 @@
                     <x-slot name="content">
                         <!-- Authentication -->
                         <x-dropdown-link href="/dashboard">Dashboard</x-dropdown-li>
-                            <x-dropdown-link href="/admin">Admin</x-dropdown-li>
+                            <x-dropdown-link href="/admin">Manajemen Data</x-dropdown-li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
