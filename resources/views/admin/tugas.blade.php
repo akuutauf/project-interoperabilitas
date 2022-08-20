@@ -26,6 +26,11 @@
                         <div class="card-header">
                             <strong class="card-title">Tabel Data Tugas</strong>
                         </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <a href="" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data</a>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
@@ -35,6 +40,7 @@
                                         <th class="bg-theme">Keterangan Tugas</th>
                                         <th class="bg-theme">Status Tugas</th>
                                         <th class="bg-theme">Nama Matakuliah</th>
+                                        <th class="bg-theme">Menu</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,6 +51,12 @@
                                             <td>{{ $item->ket_tugas }}</td>
                                             <td>{{ $item->status_tugas }}</td>
                                             <td>{{ $item->kategori->nama_kategori }}</td>
+                                            <td>
+                                                <center><a href=""><i
+                                                            class="fa-solid fa-pen-to-square text-info"></i></a> | <a
+                                                        href=""><i class="fa-solid fa-trash text-danger"></i></a>
+                                                </center>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -71,5 +83,5 @@
     <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('assets/js/init-scripts/data-table/datatables-init.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/init-scripts/data-table/datatables-init.js') }}"></script> --}}
 @endsection
