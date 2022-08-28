@@ -62,7 +62,7 @@
                                             <td>{{ $kategori->nama_kategori }}</td>
                                             <td>{{ $kategori->status_kategori }}</td>
                                             <td>
-                                                <center><a href="{{ $kategori->id }}"><i
+                                                <center><a href="{{ route('admin.edit.kategori', $kategori->id) }}"><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a
                                                         href="{{ route('admin.destroy.kategori', $kategori->id) }}"
                                                         onclick="return confirm('Apakah Anda yakin ingin menghapus data kategori?');"><i

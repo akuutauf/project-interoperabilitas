@@ -63,7 +63,11 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'kategori'  => kategori::find($id),
+            'action' => route('admin.update.kategori', $id)
+        ];
+        return view('admin.kategori.form', $data);
     }
 
     /**
@@ -73,9 +77,10 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        kategori::where('id', $request->id)->update($request->only(['nama_kategori', 'nama_mitra', 'status_kategori', 'desc_kerjasama']));
+        return redirect()->route('admin.index.kategori')->with('success', 'Data Kategori berhasil di Update');
     }
 
     /**

@@ -25,25 +25,30 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->middleware(['auth']);
 
-    //Dosen
-    Route::get('/index/dosen', [ManajemenDosen::class, 'index'])->name('admin.dosen');
-    Route::get('/create/dosen', [ManajemenDosen::class, 'create'])->name('admin.create');
-    Route::post('/store/dosen', [ManajemenDosen::class, 'store'])->name('admin.store');
-    Route::get('/edit/{id}/dosen', [ManajemenDosen::class, 'edit'])->name('admin.edit');
-    Route::post('/update/{id}/dosen', [ManajemenDosen::class, 'update'])->name('admin.update');
-    Route::get('/destroy/{id}/dosen', [ManajemenDosen::class, 'destroy'])->name('admin.delete');
+    //event
+    Route::get('/index/event', [ManajemenEvent::class, 'index'])->name('admin.event');
+    Route::get('/create/event', [ManajemenEvent::class, 'create'])->name('admin.create.event');
+    Route::post('/store/event', [ManajemenEvent::class, 'store'])->name('admin.store.event');
+    Route::get('/edit/{id}/event', [ManajemenEvent::class, 'edit'])->name('admin.edit.event');
+    Route::post('/update/{id}/event', [ManajemenEvent::class, 'update'])->name('admin.update.event');
+    Route::get('/destroy/{id}/event', [ManajemenEvent::class, 'destroy'])->name('admin.delete.event');
 
     // Kategori
     Route::get('/kategori', [KategoriController::class, 'index'])->name('admin.index.kategori');
     Route::get('/create/kategori', [KategoriController::class, 'create'])->name('admin.create.kategori');
     Route::post('/store/kategori', [KategoriController::class, 'store'])->name('admin.store.kategori');
     Route::get('/destroy/{id}/kategori', [KategoriController::class, 'destroy'])->name('admin.destroy.kategori');
+    Route::get('/edit/{id}/kategori', [KategoriController::class, 'edit'])->name('admin.edit.kategori');
+    Route::post('/update/{id}/kategori', [KategoriController::class, 'update'])->name('admin.update.kategori');
 
     // Tugas
     Route::get('/tugas', [TugasController::class, 'index'])->name('admin.index.tugas');
     Route::get('/create/tugas', [TugasController::class, 'create'])->name('admin.create.tugas');
     Route::post('/store/tugas', [TugasController::class, 'store'])->name('admin.store.tugas');
     Route::get('/destroy/{id}/tugas', [TugasController::class, 'destroy'])->name('admin.destroy.tugas');
+
+    Route::get('/edit/{id}/dosen', [ManajemenDosen::class, 'edit'])->name('admin.edit');
+    Route::post('/update/{id}/dosen', [ManajemenDosen::class, 'update'])->name('admin.update');
 });
 
 require __DIR__ . '/auth.php';
