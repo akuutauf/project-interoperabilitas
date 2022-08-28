@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\tugas;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,12 @@ class TugasController extends Controller
      */
     public function create()
     {
-        $tugas = tugas::all();
-        return view('admin.tugas.create', compact('tugas'));
+        $data = [
+            'action' => route('admin.store.tugas')
+        ];
+
+        $kategori = kategori::distinct()->get();
+        return view('admin.tugas.create', $data, compact('kategori'));
     }
 
     /**
@@ -38,7 +43,8 @@ class TugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        tugas::create($request->all());
+        return redirect()->route('admin.index.tugas')->with('success', 'Data Tugas berhasil di tambahkan');
     }
 
     /**
@@ -83,6 +89,7 @@ class TugasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        tugas::where('id', $id)->delete();
+        return redirect()->route('admin.index.tugas')->with('success', 'Data Tugas berhasil di hapus');
     }
 }

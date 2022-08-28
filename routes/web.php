@@ -40,8 +40,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/destroy/{id}/kategori', [KategoriController::class, 'destroy'])->name('admin.destroy.kategori');
 
     // Tugas
-    Route::get('/tugas', [TugasController::class, 'index']);
-    Route::get('/create/tugas', [TugasController::class, 'create']);
+    Route::get('/tugas', [TugasController::class, 'index'])->name('admin.index.tugas');
+    Route::get('/create/tugas', [TugasController::class, 'create'])->name('admin.create.tugas');
+    Route::post('/store/tugas', [TugasController::class, 'store'])->name('admin.store.tugas');
+    Route::get('/destroy/{id}/tugas', [TugasController::class, 'destroy'])->name('admin.destroy.tugas');
 });
 
 require __DIR__ . '/auth.php';

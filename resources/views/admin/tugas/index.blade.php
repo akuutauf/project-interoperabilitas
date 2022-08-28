@@ -66,7 +66,8 @@
                                             <td>
                                                 <center><a href="{{ $item->id }}"><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a
-                                                        href=""><i class="fa-solid fa-trash text-danger"></i></a>
+                                                        href="{{ route('admin.destroy.tugas', $item->id) }}"><i
+                                                            class="fa-solid fa-trash text-danger"></i></a>
                                                 </center>
                                             </td>
                                         </tr>

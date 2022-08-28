@@ -31,7 +31,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-11">
                                         {{-- Form action disesuaikan --}}
-                                        <form action="" class="form-group" method="POST"
+                                        <form action="{{ $action }}" class="form-group" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="container container-form shadow-card mb-5">
@@ -47,31 +47,16 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="form-group">
-                                                                <label for="gender_dosen" class="medium">Matakuliah
+                                                                <label for="kategori_id" class="medium">Matakuliah
                                                                     :</label>
-                                                                <select class="form-control form-theme" id="gender_dosen"
-                                                                    name="gender_dosen">
-                                                                    <option value="Default">Pilih Matakuliah</option>
-                                                                    <option value="Interoperabilitas">Interoperabilitas
-                                                                    </option>
-                                                                    <option value="Manajemen Proyek">Manajemen Proyek
-                                                                    </option>
-                                                                    <option value="Proyek Aplikasi Dasar">Proyek Aplikasi
-                                                                        Dasar
-                                                                    </option>
-                                                                    <option value="Keamanan Perangkat Lunak">Keamanan
-                                                                        Perangkat Lunak
-                                                                    </option>
-                                                                    <option value="Analisis dan Desain Perangkat Lunak">
-                                                                        Analisis dan Desain Perangkat Lunak</option>
-                                                                    <option
-                                                                        value="Sistem Administrasi dan Informasi Terdistribusi">
-                                                                        Sistem Administrasi dan Informasi Terdistribusi
-                                                                    </option>
-                                                                    <option
-                                                                        value="Metode dan Model Pengembangan Perangkat Lunak">
-                                                                        Metode dan Model Pengembangan Perangkat Lunak
-                                                                    </option>
+                                                                <select class="form-control form-theme" id="kategori_id"
+                                                                    name="kategori_id">
+                                                                    <option value="">Pilih Matakuliah</option>
+                                                                    @foreach ($kategori as $itemId)
+                                                                        <option value="{{ $itemId->id }}">
+                                                                            {{ $itemId->nama_kategori }}
+                                                                        </option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
