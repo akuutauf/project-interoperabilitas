@@ -20,42 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// middleware for admin page
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    })->middleware(['auth'])->name('dashboard');
+
+    Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
+    Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
+    Route::get('/insert-kategori', [KategoriController::class, 'create'])->middleware(['auth']);
+    Route::get('/insert-tugas', [TugasController::class, 'create'])->middleware(['auth']);
+});
 
 require __DIR__ . '/auth.php';
-
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-
-Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
-Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
-Route::get('/insert-kategori', [KategoriController::class, 'create'])->middleware(['auth']);
-Route::get('/insert-tugas', [TugasController::class, 'create'])->middleware(['auth']);
-
-// Route::resource('kategoricontroller', 'App\Http\Controllers\Admin\KategoriController')->middleware(['auth']);
-// Route::resource('tugascontroller', 'App\Http\Controllers\Admin\TugasController')->middleware(['auth']);
-
-// Route::middlewere(['auth'])->group( function(){
-//     Route::resource('kategoricontroller','App\Http\Controllers\Admin\KategoriController');
-//     Route::get('/kategori', [Admin\KategoriController::class, 'index']);
-// });
-
-// })->middleware(['auth'])->name('admin');
-
-// Route::get('/admin/kategori', function () {
-//     return view('admin.kategori');
-// })->middleware(['auth'])->name('admin');
-
-// Route::get('/admin/tugas', function () {
-//     return view('admin.tugas');
-// })->middleware(['auth'])->name('admin');
-
-// // get route from resource
-// Route::get('/admin/kategori', [KategoriController::class, 'index', 'show']);
-// Route::get('/admin/tugas', [TugasController::class, 'index']);
-
-// Route::resource('/admin/tugas', 'App\Http\Controllers\TugasController');

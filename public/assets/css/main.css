@@ -61,3 +61,7 @@
 .border-radius {
     border-radius: 0.5rem !important;
 }
+
+.fs-50 {
+    font-size: 50px !important;
+}
