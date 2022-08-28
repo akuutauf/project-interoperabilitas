@@ -18,16 +18,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.beranda-page');
+    return view('beranda-page');
 });
 
 // middleware for admin page
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->middleware(['auth']);
-    Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
-    Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
-    Route::get('/insert-kategori', [KategoriController::class, 'create'])->middleware(['auth']);
-    Route::get('/insert-tugas', [TugasController::class, 'create'])->middleware(['auth']);
+
+    //Dosen
+    Route::get('/index/dosen', [ManajemenDosen::class, 'index'])->name('admin.dosen');
+    Route::get('/create/dosen', [ManajemenDosen::class, 'create'])->name('admin.create');
+    Route::post('/store/dosen', [ManajemenDosen::class, 'store'])->name('admin.store');
+    Route::get('/edit/{id}/dosen', [ManajemenDosen::class, 'edit'])->name('admin.edit');
+    Route::post('/update/{id}/dosen', [ManajemenDosen::class, 'update'])->name('admin.update');
+    Route::get('/destroy/{id}/dosen', [ManajemenDosen::class, 'destroy'])->name('admin.delete');
+
+    // Kategori
+    Route::get('/kategori', [KategoriController::class, 'index']);
+    Route::get('/create/kategori', [KategoriController::class, 'create']);
+
+    // Tugas
+    Route::get('/tugas', [TugasController::class, 'index']);
+    Route::get('/create/tugas', [TugasController::class, 'create']);
 });
 
 require __DIR__ . '/auth.php';

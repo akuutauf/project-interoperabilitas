@@ -37,7 +37,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <a href="/insert-tugas" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data Tugas</a>
+                                <a href="/create/tugas" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data Tugas</a>
                             </div>
                         </div>
                         <div class="card-body">

@@ -103,7 +103,7 @@
                                                 </div>
                                                 <div class="row ml-4 mr-4 pb-5">
                                                     <div class="justify-content-between">
-                                                        <a href="/kategori" name="kembali"
+                                                        <a href="/tugas" name="kembali"
                                                             class="btn bg-secondary px-sm-3 py-sm-2 text-white mt-3 border-radius"
                                                             id="back">
                                                             Kembali</a>
@@ -112,11 +112,11 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </form>
                                     </div>
-                                    </form>
                                 </div>
+                            </section>
                         </div>
-                        </section>
                         {{-- End Container Form --}}
                     </div>
                 </div>
