@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TugasController;
 use Illuminate\Support\Facades\Route;
@@ -22,14 +23,7 @@ Route::get('/', function () {
 
 // middleware for admin page
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
-
-    Route::get('/admin', function () {
-        return view('admin.dashboard');
-    })->middleware(['auth'])->name('dashboard');
-
+    Route::get('/dashboard', [AdminController::class, 'index'])->middleware(['auth']);
     Route::get('/kategori', [KategoriController::class, 'index'])->middleware(['auth']);
     Route::get('/tugas', [TugasController::class, 'index'])->middleware(['auth']);
     Route::get('/insert-kategori', [KategoriController::class, 'create'])->middleware(['auth']);

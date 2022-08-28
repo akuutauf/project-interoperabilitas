@@ -2,7 +2,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    <title>Interoperabilitas | Manajemen Tugas</title>
+    <title>Manajemen Tugas | Interoperabilitas</title>
 @endsection
 
 {{-- Include Section for Content --}}
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Data Tugas</h1>
+                    <h1>Manajemen Tugas</h1>
                 </div>
             </div>
         </div>
@@ -20,7 +20,16 @@
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-
+                <div class="col-sm-12">
+                    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                        <span class="badge badge-pill badge-success px-2 py-2">Selamat Datang</span>&ensp;
+                        {{ Auth::user()->name }} di
+                        Panel Manajemen data tugas
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -28,7 +37,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <a href="/insert-tugas" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data</a>
+                                <a href="/insert-tugas" class="btn bg-theme btn-border py-2 ml-3 mt-3">Tambah Data Tugas</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -52,7 +61,7 @@
                                             <td>{{ $item->status_tugas }}</td>
                                             <td>{{ $item->kategori->nama_kategori }}</td>
                                             <td>
-                                                <center><a href=""><i
+                                                <center><a href="{{ $item->id }}"><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a
                                                         href=""><i class="fa-solid fa-trash text-danger"></i></a>
                                                 </center>
@@ -70,8 +79,6 @@
 
     <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>

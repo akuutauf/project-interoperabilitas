@@ -2,7 +2,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    <title>Interoperabilitas | Insert Kategori</title>
+    <title>Tambah Tugas | Interoperabilitas</title>
 @endsection
 
 {{-- Include Section for Content --}}
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Insert Kategori</h1>
+                    <h1>Tambah Data Tugas</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Form Data Kategori</strong>
+                            <strong class="card-title">Form Insert Data Tugas</strong>
                         </div>
                         <div class="card-body">
                             {{-- Start Container Form --}}
@@ -103,7 +103,7 @@
                                                 </div>
                                                 <div class="row ml-4 mr-4 pb-5">
                                                     <div class="justify-content-between">
-                                                        <a href="/tugas" name="kembali"
+                                                        <a href="/kategori" name="kembali"
                                                             class="btn bg-secondary px-sm-3 py-sm-2 text-white mt-3 border-radius"
                                                             id="back">
                                                             Kembali</a>
@@ -127,8 +127,6 @@
 
     <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>

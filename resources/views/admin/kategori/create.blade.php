@@ -2,7 +2,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    <title>Interoperabilitas | Insert Kategori</title>
+    <title>Tambah Kategori | Interoperabilitas</title>
 @endsection
 
 {{-- Include Section for Content --}}
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Insert Kategori</h1>
+                    <h1>Tambah Data Kategori</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Form Data Kategori</strong>
+                            <strong class="card-title">Form Insert Data Kategori</strong>
                         </div>
                         <div class="card-body">
                             {{-- Start Container Form --}}
@@ -60,102 +60,31 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="row ml-4 mr-4">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="nip_nik_dosen" class="medium">NIP atau NIK Dosen
-                                                                :</label>
-                                                            <input type="text" class="form-control form-theme"
-                                                                id="nip_nik_dosen" name="nip_nik_dosen"
-                                                                placeholder="NIP atau NIK">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="nidn_dosen" class="medium">NIDN Dosen :</label>
-                                                            <input type="text" class="form-control form-theme"
-                                                                id="nidn_dosen" name="nidn_dosen" placeholder="NIDN">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row ml-4 mr-4">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="foto_dosen" class="medium">Foto Dosen <span
-                                                                    class="fw-medium">(*max img
-                                                                    2Mb)</span>:</label>
-                                                            <input type="file" class="form-control form-theme"
-                                                                id="foto_dosen" name="foto_dosen" placeholder="Foto Dosen">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="jabatan_dosen" class="medium">Jabatan Dosen
-                                                                :</label>
-                                                            <input type="text" class="form-control form-theme"
-                                                                id="jabatan_dosen" name="jabatan_dosen"
-                                                                placeholder="Jabatan">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row ml-4 mr-4">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="email_dosen" class="medium">Email Dosen :</label>
-                                                            <input type="text" class="form-control form-theme"
-                                                                id="email_dosen" name="email_dosen"
-                                                                placeholder="Alamat email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="notelp_dosen" class="medium">Nomor Telepon :</label>
-                                                            <input type="text" class="form-control form-theme"
-                                                                id="notelp_dosen" name="notelp_dosen"
-                                                                placeholder="Nomor telepon">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row ml-4 mr-4">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="alamat_dosen" class="medium">Alamat Dosen
-                                                                :</label>
-                                                            <textarea class="form-control form-color " id="alamat_dosen" name="alamat_dosen" placeholder="Alamat lengkap"
-                                                                rows="3"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="row ml-4 mr-4 pb-5">
                                                     <div class="justify-content-between">
-                                                        <a href="/kategori" name="kembali"
+                                                        <a href="/tugas" name="kembali"
                                                             class="btn bg-secondary px-sm-3 py-sm-2 text-white mt-3 border-radius"
                                                             id="back">
                                                             Kembali</a>
                                                         <button type="submit"
                                                             class="btn button px-sm-3 py-sm-2 fw-semi-bold mt-3 border-radius">Simpan</button>
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                             </div>
+                                        </form>
                                     </div>
-                                    </form>
                                 </div>
+                            </section>
+                            {{-- End Container Form --}}
                         </div>
-                        </section>
-                        {{-- End Container Form --}}
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- .animated -->
-    </div><!-- .content -->
 
     <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>

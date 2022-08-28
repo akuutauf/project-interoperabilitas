@@ -15,7 +15,7 @@
                 </a>
 
                 <div class="user-menu dropdown-menu">
-                    <a class="nav-link" href="/admin"> Dashboard</a>
+                    <a class="nav-link" href="/dashboard"> Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
