@@ -2,7 +2,7 @@
 @extends('admin.layout.master')
 
 @section('title')
-    <title>Update Kategori | Interoperabilitas</title>
+    <title>Update Tugas | Interoperabilitas</title>
 @endsection
 
 {{-- Include Section for Content --}}
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Ubah Data Kategori</h1>
+                    <h1>Ubah Data Tugas</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Form Update Data Kategori</strong>
+                            <strong class="card-title">Form Update Data Tugas</strong>
                         </div>
                         <div class="card-body">
                             {{-- Start Container Form --}}
@@ -38,36 +38,67 @@
                                                 <div class="row ml-4 mr-4 pt-5">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="nama_kategori" class="medium">Nama Kategori
+                                                            <label for="nama_tugas" class="medium">Nama Tugas
                                                                 :</label>
                                                             <input type="text" class="form-control form-theme"
-                                                                id="nama_kategori" name="nama_kategori"
-                                                                placeholder="{{ isset($kategori) ? $kategori->nama_kategori : '' }}"
-                                                                value="{{ isset($kategori) ? $kategori->nama_kategori : '' }}">
+                                                                id="nama_tugas" name="nama_tugas"
+                                                                placeholder="{{ isset($tugas) ? $tugas->nama_tugas : '' }}"
+                                                                value="{{ isset($tugas) ? $tugas->nama_tugas : '' }}">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="form-group">
-                                                                <label for="status_kategori" class="medium">Status Kategori
+                                                                <label for="kategori_id" class="medium">Matakuliah
                                                                     :</label>
-                                                                <select class="form-control form-theme" id="status_kategori"
-                                                                    name="status_kategori">
-                                                                    <option value="">Pilih Status</option>
-                                                                    <option value="Aktif"
-                                                                        {{ $kategori->status_kategori == 'Aktif' ? 'selected' : '' }}>
-                                                                        Aktif</option>
-                                                                    <option value="Nonaktif"
-                                                                        {{ $kategori->status_kategori == 'Nonaktif' ? 'selected' : '' }}>
-                                                                        Nonaktif</option>
+                                                                <select class="form-control form-theme" id="kategori_id"
+                                                                    name="kategori_id">
+                                                                    <option value="">Pilih Matakuliah</option>
+                                                                    @foreach ($kategori as $itemId)
+                                                                        <option value="{{ $itemId->id }}"
+                                                                            {{ $tugas->kategori_id == $itemId->id ? 'selected' : '' }}>
+                                                                            {{ $itemId->nama_kategori }}
+                                                                        </option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row ml-4 mr-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div class="form-group">
+                                                                <label for="status_tugas" class="medium">Status Tugas
+                                                                    :</label>
+                                                                <select class="form-control form-theme" id="status_tugas"
+                                                                    name="status_tugas">
+                                                                    <option value="Default">Pilih Status</option>
+                                                                    <option value="Selesai"
+                                                                        {{ $tugas->status_tugas == 'Selesai' ? 'selected' : '' }}>
+                                                                        Selesai</option>
+                                                                    <option value="On Progress"
+                                                                        {{ $tugas->status_tugas == 'On Progress' ? 'selected' : '' }}>
+                                                                        On Progress</option>
+                                                                    <option value="Belum Selesai"
+                                                                        {{ $tugas->status_tugas == 'Belum Selesai' ? 'selected' : '' }}>
+                                                                        Belum Selesai</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="ket_tugas" class="medium">Keterangan Tugas
+                                                                :</label>
+                                                            <textarea class="form-control form-color " id="ket_tugas" name="ket_tugas" placeholder="Keterangan tugas"
+                                                                rows="3">{{ isset($tugas) ? $tugas->ket_tugas : '' }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row ml-4 mr-4 pb-5">
                                                     <div class="justify-content-between">
-                                                        <a href="/kategori" name="kembali"
+                                                        <a href="/tugas" name="kembali"
                                                             class="btn bg-secondary px-sm-3 py-sm-2 text-white mt-3 border-radius"
                                                             id="back">
                                                             Kembali</a>
@@ -80,13 +111,14 @@
                                     </div>
                                 </div>
                             </section>
-                            {{-- End Container Form --}}
                         </div>
+                        {{-- End Container Form --}}
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- .animated -->
+    </div><!-- .content -->
 
     <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/popper.js/dist/umd/popper.min.js') }}"></script>

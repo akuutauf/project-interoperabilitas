@@ -82,7 +82,8 @@
                                                         <div class="form-group">
                                                             <label for="ket_tugas" class="medium">Keterangan Tugas
                                                                 :</label>
-                                                            <textarea class="form-control form-color " id="ket_tugas" name="ket_tugas" placeholder="Alamat lengkap" rows="3"></textarea>
+                                                            <textarea class="form-control form-color " id="ket_tugas" name="ket_tugas" placeholder="Keterangan tugas"
+                                                                rows="3"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

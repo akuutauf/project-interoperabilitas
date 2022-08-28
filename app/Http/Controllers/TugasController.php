@@ -66,7 +66,13 @@ class TugasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'tugas'  => tugas::find($id),
+            'action' => route('admin.update.tugas', $id)
+        ];
+
+        $kategori = kategori::distinct()->get();
+        return view('admin.tugas.form', $data, compact('kategori'));
     }
 
     /**
@@ -76,9 +82,10 @@ class TugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        tugas::where('id', $request->id)->update($request->only(['nama_tugas', 'kategori_id', 'status_tugas', 'ket_tugas']));
+        return redirect()->route('admin.index.tugas')->with('success', 'Data Tugas berhasil di Update');
     }
 
     /**

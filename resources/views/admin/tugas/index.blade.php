@@ -64,7 +64,7 @@
                                             <td>{{ $item->status_tugas }}</td>
                                             <td>{{ $item->kategori->nama_kategori }}</td>
                                             <td>
-                                                <center><a href="{{ $item->id }}"><i
+                                                <center><a href="{{ route('admin.edit.tugas', $item->id) }}"><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a
                                                         href="{{ route('admin.destroy.tugas', $item->id) }}"><i
                                                             class="fa-solid fa-trash text-danger"></i></a>
