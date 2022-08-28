@@ -53,9 +53,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $no = 1;
+                                    @endphp
                                     @foreach ($dataTugas as $item)
                                         <tr>
-                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $no }}</td>
                                             <td>{{ $item->nama_tugas }}</td>
                                             <td>{{ $item->ket_tugas }}</td>
                                             <td>{{ $item->status_tugas }}</td>
@@ -67,6 +70,9 @@
                                                 </center>
                                             </td>
                                         </tr>
+                                        @php
+                                            $no++;
+                                        @endphp
                                     @endforeach
                                 </tbody>
                             </table>

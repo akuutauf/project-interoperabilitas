@@ -25,8 +25,11 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        $kategori = kategori::all();
-        return view('admin.kategori.create', compact('kategori'));
+        $data = [
+            'action' => route('admin.store.kategori')
+        ];
+
+        return view('admin.kategori.create', $data);
     }
 
     /**
@@ -37,7 +40,8 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        kategori::create($request->all());
+        return redirect()->route('admin.index.kategori')->with('success', 'Data Kategori berhasil di tambahkan');
     }
 
     /**
@@ -82,7 +86,8 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        kategori::where('id', $id)->delete();
+        return redirect()->route('admin.index.kategori')->with('success', 'Data Kategori berhasil di hapus');
     }
 }
 

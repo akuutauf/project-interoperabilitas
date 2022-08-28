@@ -53,18 +53,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $no = 1;
+                                    @endphp
                                     @foreach ($data as $kategori)
                                         <tr>
-                                            <td>{{ $kategori->id }}</td>
+                                            <td>{{ $no }}</td>
                                             <td>{{ $kategori->nama_kategori }}</td>
                                             <td>{{ $kategori->status_kategori }}</td>
                                             <td>
                                                 <center><a href="{{ $kategori->id }}"><i
                                                             class="fa-solid fa-pen-to-square text-info"></i></a> | <a
-                                                        href=""><i class="fa-solid fa-trash text-danger"></i></a>
+                                                        href="{{ route('admin.destroy.kategori', $kategori->id) }}"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data kategori?');"><i
+                                                            class="fa-solid fa-trash text-danger"></i></a>
                                                 </center>
                                             </td>
                                         </tr>
+                                        @php
+                                            $no++;
+                                        @endphp
                                     @endforeach
                                 </tbody>
                             </table>

@@ -34,8 +34,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/destroy/{id}/dosen', [ManajemenDosen::class, 'destroy'])->name('admin.delete');
 
     // Kategori
-    Route::get('/kategori', [KategoriController::class, 'index']);
-    Route::get('/create/kategori', [KategoriController::class, 'create']);
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('admin.index.kategori');
+    Route::get('/create/kategori', [KategoriController::class, 'create'])->name('admin.create.kategori');
+    Route::post('/store/kategori', [KategoriController::class, 'store'])->name('admin.store.kategori');
+    Route::get('/destroy/{id}/kategori', [KategoriController::class, 'destroy'])->name('admin.destroy.kategori');
 
     // Tugas
     Route::get('/tugas', [TugasController::class, 'index']);

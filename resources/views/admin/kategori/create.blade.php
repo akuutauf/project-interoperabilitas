@@ -31,7 +31,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-11">
                                         {{-- Form action disesuaikan --}}
-                                        <form action="/admin/manajemen-dosen/" class="form-group" method="POST"
+                                        <form action="{{ $action }}" class="form-group" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="container container-form shadow-card mb-5">
@@ -48,11 +48,11 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="form-group">
-                                                                <label for="gender_dosen" class="medium">Status Kategori
+                                                                <label for="status_kategori" class="medium">Status Kategori
                                                                     :</label>
-                                                                <select class="form-control form-theme" id="gender_dosen"
-                                                                    name="gender_dosen">
-                                                                    <option value="Default">Pilih Status</option>
+                                                                <select class="form-control form-theme" id="status_kategori"
+                                                                    name="status_kategori">
+                                                                    <option value="">Pilih Status</option>
                                                                     <option value="Aktif">Aktif</option>
                                                                     <option value="Nonaktif">Nonaktif</option>
                                                                 </select>
