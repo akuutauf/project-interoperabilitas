@@ -1,0 +1,129 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Raleway:wght@100;400;700;800&display=swap");
+
+// Variables
+$themeColor: #46b7e5;
+$textColor: #5b5b5b;
+
+// body
+body {
+  // font-family: 'Lato', sans-serif;
+  font-family: "Raleway", sans-serif;
+
+  min-height: 800px;
+
+  h1 {
+    font-weight: 800;
+  }
+}
+
+// Navbar
+.my-navbar {
+  margin-top: 1.3em;
+
+  .my-nav {
+    .container-fluid {
+      #navbarBrand {
+        h4 {
+          color: $textColor;
+          font-weight: 700;
+          margin-left: 0.5em;
+        }
+      }
+
+      .my-div {
+        .navigasi {
+          a {
+            color: $textColor;
+            font-weight: 700;
+            margin-left: 2.2em;
+            transition: 0.5 color ease;
+
+            &:hover {
+              color: $themeColor;
+            }
+          }
+
+          .sign-up-botton {
+            a {
+              transition: 0.3s color ease;
+              background-color: $themeColor;
+              padding: 0.4em 1em;
+              color: white;
+              border: 1.5px solid transparent;
+              border-radius: 2em;
+              font-weight: 700;
+
+              &:hover {
+                background-color: transparent;
+                padding: 0.4em 1em;
+                color: $themeColor;
+                border: 1.5px solid $themeColor;
+                border-radius: 2em;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Content
+.my-content {
+  margin-top: 3em;
+
+  .my-row {
+    .my-col {
+      margin-right: 5em;
+      margin-top: 5.5em;
+
+      @media screen and (max-width: 992px) {
+        margin-right: 3em;
+      }
+
+      .my-paragraph {
+        h1 {
+          color: $textColor;
+          font-size: 3.5em;
+
+          span {
+            font-weight: 700;
+            font-size: 0.65em;
+          }
+        }
+        p {
+          font-family: "Lato", sans-serif;
+          color: $textColor;
+        }
+        a {
+          transition: 0.3s color ease;
+          background-color: $themeColor;
+          padding: 0.7em 2em;
+          color: white;
+          border: 1.5px solid transparent;
+          border-radius: 2em;
+          font-weight: 700;
+
+          &:hover {
+            background-color: transparent;
+            padding: 0.7em 2em;
+            color: $themeColor;
+            border: 1.5px solid $themeColor;
+            border-radius: 2em;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .my-col-two {
+      img {
+        @media screen and (max-width: 768px) {
+          margin-top: 4em;
+        }
+      }
+    }
+  }
+}

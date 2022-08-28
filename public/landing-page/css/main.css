@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Raleway:wght@100;400;700;800&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  min-height: 800px;
+}
+
+body h1 {
+  font-weight: 800;
+}
+
+.my-navbar {
+  margin-top: 1.3em;
+}
+
+.my-navbar .my-nav .container-fluid #navbarBrand h4 {
+  color: #5b5b5b;
+  font-weight: 700;
+  margin-left: 0.5em;
+}
+
+.my-navbar .my-nav .container-fluid .my-div .navigasi a {
+  color: #5b5b5b;
+  font-weight: 700;
+  margin-left: 2.2em;
+  -webkit-transition: 0.5 color ease;
+  transition: 0.5 color ease;
+}
+
+.my-navbar .my-nav .container-fluid .my-div .navigasi a:hover {
+  color: #46b7e5;
+}
+
+.my-navbar .my-nav .container-fluid .my-div .navigasi .sign-up-botton a {
+  -webkit-transition: 0.3s color ease;
+  transition: 0.3s color ease;
+  background-color: #46b7e5;
+  padding: 0.4em 1em;
+  color: white;
+  border: 1.5px solid transparent;
+  border-radius: 2em;
+  font-weight: 700;
+}
+
+.my-navbar .my-nav .container-fluid .my-div .navigasi .sign-up-botton a:hover {
+  background-color: transparent;
+  padding: 0.4em 1em;
+  color: #46b7e5;
+  border: 1.5px solid #46b7e5;
+  border-radius: 2em;
+  font-weight: 700;
+}
+
+.my-content {
+  margin-top: 3em;
+}
+
+.my-content .my-row .my-col {
+  margin-right: 5em;
+  margin-top: 5.5em;
+}
+
+@media screen and (max-width: 992px) {
+  .my-content .my-row .my-col {
+    margin-right: 3em;
+  }
+}
+
+.my-content .my-row .my-col .my-paragraph h1 {
+  color: #5b5b5b;
+  font-size: 3.5em;
+}
+
+.my-content .my-row .my-col .my-paragraph h1 span {
+  font-weight: 700;
+  font-size: 0.65em;
+}
+
+.my-content .my-row .my-col .my-paragraph p {
+  font-family: "Lato", sans-serif;
+  color: #5b5b5b;
+}
+
+.my-content .my-row .my-col .my-paragraph a {
+  -webkit-transition: 0.3s color ease;
+  transition: 0.3s color ease;
+  background-color: #46b7e5;
+  padding: 0.7em 2em;
+  color: white;
+  border: 1.5px solid transparent;
+  border-radius: 2em;
+  font-weight: 700;
+}
+
+.my-content .my-row .my-col .my-paragraph a:hover {
+  background-color: transparent;
+  padding: 0.7em 2em;
+  color: #46b7e5;
+  border: 1.5px solid #46b7e5;
+  border-radius: 2em;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .my-content .my-row .my-col-two img {
+    margin-top: 4em;
+  }
+}
+/*# sourceMappingURL=main.css.map */
