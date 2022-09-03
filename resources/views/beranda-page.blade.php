@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <link rel="icon" href="{{ asset('img/logo-poliwangi.png') }}" />
-    <title>Landing Page User | Interoperabilitas</title>
+    <title>Landing Page | Interoperabilitas</title>
 </head>
 
 <body>
@@ -29,10 +29,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end my-div" id="navbarNavAltMarkup">
                     <div class="navbar-nav navigasi">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">About</a>
-                        <a class="nav-link" href="#">Services</a>
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link" href="#">Tentang</a>
+                        <a class="nav-link" href="#">Layanan</a>
+                        <a class="nav-link" href="#">Kontak</a>
                         <div class="sign-up-botton">
                             <a href="/login" class="btn btn-info">Sign In</a>
                         </div>
@@ -47,9 +47,8 @@
         <div class="row my-row justify-content-center">
             <div class="col-md-4 my-col">
                 <div class="my-paragraph">
-                    <h1>Business<br /><span>Analysis</span></h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, accusamus autem fuga
-                        voluptatibus ea voluptatem!</p>
+                    <h1>Aplikasi<br /><span>Manajemen Tugas</span></h1>
+                    <p>Aplikasi ini memudahkan mahasiswa untuk memanajemen tugas perkuliahan.</p>
                     <a href="/register" class="btn btn-info mt-3">REGISTER</a>
                 </div>
             </div>
